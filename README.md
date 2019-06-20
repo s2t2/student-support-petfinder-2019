@@ -31,8 +31,8 @@ Add a file called ".env" with the following contents (except use your own API Ke
 Create a new virtual environment:
 
 ```sh
-conda create -n pets-env-6 python=3.6
-conda activate pets-env-6
+conda create -n pets-env-7 python=3.7
+conda activate pets-env-7
 ```
 
 Install package dependencies listed in the "requirements.txt" file:
@@ -92,4 +92,18 @@ This will get you an access token like:
     "expires_in":3600,
     "access_token":"somelongstring-xyz"
 }
+```
+
+Store the access token in an environment variable called `PETFINDER_ACCESS_TOKEN`.
+
+This kind of curl command does work (replacing with your actual token, without curly braces):
+
+```sh
+curl -H "Authorization: Bearer {PETFINDER_ACCESS_TOKEN}" GET https://api.petfinder.com/v2/animals
+```
+
+Implementing an equivalent request in python now...
+
+```sh
+python roll_my_own.py
 ```
