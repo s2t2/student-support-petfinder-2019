@@ -33,3 +33,14 @@ Install package dependencies listed in the "requirements.txt" file:
 ```sh
 pip install -r requirements.txt
 ```
+
+## Usage
+
+Run the script:
+
+```sh
+python find_pets.py
+#> json.decoder.JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+```
+
+Need to figure out how to resolve this error.
