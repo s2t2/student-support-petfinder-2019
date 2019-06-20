@@ -10,14 +10,19 @@ import pdb
 load_dotenv()
 
 API_KEY = os.environ.get("PETFINDER_API_KEY")
-print("API KEY", API_KEY)
-CLIENT_SECRET = os.environ.get("PETFINDER_CLIENT_SECRET")
-print("CLIENT SECRET", CLIENT_SECRET)
+#CLIENT_SECRET = os.environ.get("PETFINDER_CLIENT_SECRET")
+#HOST = "https://api.petfinder.com/v2/"
 
+#print("--------------")
+#print("CLIENT SECRET", CLIENT_SECRET)
+#print("API KEY", API_KEY)
+#print("HOST", HOST)
 print("--------------")
-pf = petpy.Petfinder(API_KEY, secret=CLIENT_SECRET)
+#pf = petpy.Petfinder(API_KEY, secret=CLIENT_SECRET, host=HOST) #> TypeError: __init__() got an unexpected keyword argument 'host'
+pf = petpy.Petfinder(API_KEY)
 print(type(pf)) #> <class 'petpy.api.Petfinder'>
-print(dir(pf)) #>
+print(pf.host)
+#print(dir(pf)) #>
 print("--------------")
 
 #cats_list = pf.breed_list("cat") #> json.decoder.JSONDecodeError: Expecting value: line 1 column 1 (char 0)

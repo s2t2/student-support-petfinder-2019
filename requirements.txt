@@ -1,2 +1,3 @@
 python-dotenv
-petpy==1.8.2
+#petpy==1.8.2
+#git+https://github.com/s2t2/petpy.git
