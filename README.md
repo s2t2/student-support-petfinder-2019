@@ -4,12 +4,17 @@
 
   + https://www.petfinder.com/developers/api-docs (OLD)
   + https://www.petfinder.com/developers/api-key (OLD)
+
+> Attention developers! We are hard at work improving our API and are excited to unveil a new version for public use. Please note that the Petfinder API v1.0 will be deprecated in January 2020. If you do not currently use the Petfinder API, or you are ready to transition from v1.0 to v2.0, please go here to create a new account. If you are currently using version 1.0 of the API, please contact us so we can help you move to our new API!
+
   + https://www.petfinder.com/developers/ (NEW)
   + https://www.petfinder.com/user/developer-settings/
+  + https://www.petfinder.com/developers/v2/docs/#get-animals
   + https://github.com/aschleg/petpy
   + https://petpy.readthedocs.io/en/latest/
 
-> Attention developers! We are hard at work improving our API and are excited to unveil a new version for public use. Please note that the Petfinder API v1.0 will be deprecated in January 2020. If you do not currently use the Petfinder API, or you are ready to transition from v1.0 to v2.0, please go here to create a new account. If you are currently using version 1.0 of the API, please contact us so we can help you move to our new API!
+
+
 
 ## Prerequisites
 
@@ -18,6 +23,7 @@
 Add a file called ".env" with the following contents (except use your own API Key):
 
     PETFINDER_API_KEY="abc123"
+    PETFINDER_CLIENT_SECRET="def456"
 
 ## Setup
 
