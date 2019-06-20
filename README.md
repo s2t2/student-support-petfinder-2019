@@ -5,6 +5,7 @@
   + https://www.petfinder.com/developers/api-docs (OLD)
   + https://www.petfinder.com/developers/api-key (OLD)
   + https://www.petfinder.com/developers/ (NEW)
+  + https://www.petfinder.com/user/developer-settings/
   + https://github.com/aschleg/petpy
   + https://petpy.readthedocs.io/en/latest/
 
@@ -23,8 +24,8 @@ Add a file called ".env" with the following contents (except use your own API Ke
 Create a new virtual environment:
 
 ```sh
-conda create -n pets-env-7 python=3.7
-conda activate pets-env-7
+conda create -n pets-env-6 python=3.6
+conda activate pets-env-6
 ```
 
 Install package dependencies listed in the "requirements.txt" file:
