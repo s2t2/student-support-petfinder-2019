@@ -1,46 +1,22 @@
-
-import os
-
-from dotenv import load_dotenv
-import petpy
-
+#from pprint import pprint
 import json
-import pdb
+import os
+from dotenv import load_dotenv
+import requests
 
 load_dotenv()
 
-API_KEY = os.environ.get("PETFINDER_API_KEY")
-#CLIENT_SECRET = os.environ.get("PETFINDER_CLIENT_SECRET")
-#HOST = "https://api.petfinder.com/v2/"
+TOKEN = os.environ.get("PETFINDER_ACCESS_TOKEN")
+#print(TOKEN)
 
-#print("--------------")
-#print("CLIENT SECRET", CLIENT_SECRET)
-#print("API KEY", API_KEY)
-#print("HOST", HOST)
-print("--------------")
-#pf = petpy.Petfinder(API_KEY, secret=CLIENT_SECRET, host=HOST) #> TypeError: __init__() got an unexpected keyword argument 'host'
-pf = petpy.Petfinder(API_KEY)
-print(type(pf)) #> <class 'petpy.api.Petfinder'>
-print(pf.host)
-#print(dir(pf)) #>
-print("--------------")
+request_url = "https://api.petfinder.com/v2/animals"
 
-#cats_list = pf.breed_list("cat") #> json.decoder.JSONDecodeError: Expecting value: line 1 column 1 (char 0)
-#print(type(cats_list))
+headers = {"Authorization": f"Bearer {TOKEN}"}
 
-#pf.pet_getRandom() #> AttributeError: 'Petfinder' object has no attribute 'pet_getRandom'
+response = requests.get(request_url, headers=headers)
+print(type(response)) #>
+print(response.status_code)
+#pprint(response.text)
 
-#breakpoint() NOT AVAILABLE IN 3.6
-#pdb.set_trace()
-
-#cats_list = pf.breed_list("cat", return_df=True) #> json.decoder.JSONDecodeError: Expecting value: line 1 column 1 (char 0)
-#print(type(cats_list))
-
-try:
-
-    pets_list = pf.pet_find(location="Seattle", animal="cat", sex="Female", count=100, return_df=True)
-    print(type(cats_list))
-
-except json.decoder.JSONDecodeError as e:
-    print("OH, SOMETHING WENT WRONG...")
-    print(e)
+parsed_response = json.loads(response.text)
+print(parsed_response.keys())
