@@ -9,6 +9,7 @@
 
   + https://www.petfinder.com/developers/ (NEW)
   + https://www.petfinder.com/user/developer-settings/
+  + https://www.petfinder.com/developers/v2/docs/#getting-authenticated
   + https://www.petfinder.com/developers/v2/docs/#get-animals
   + https://github.com/aschleg/petpy
   + https://petpy.readthedocs.io/en/latest/
@@ -50,3 +51,45 @@ python find_pets.py
 ```
 
 Need to figure out how to resolve this error.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<hr>
+
+
+
+
+Trying from scratch...
+
+First step is to [get an access token](https://www.petfinder.com/developers/v2/docs/#getting-authenticated), issuing this command from the Terminal and replacing the `{PETFINDER_API_KEY}` and `{PETFINDER_CLIENT_SECRET}` with your own creds (remove the curly braces)...
+
+```sh
+curl -d "grant_type=client_credentials&client_id={PETFINDER_API_KEY}&client_secret={PETFINDER_CLIENT_SECRET}" https://api.petfinder.com/v2/oauth2/token
+```
+
+This will get you an access token like:
+
+```
+{
+    "token_type":"Bearer",
+    "expires_in":3600,
+    "access_token":"somelongstring-xyz"
+}
+```
